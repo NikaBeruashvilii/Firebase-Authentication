@@ -1,0 +1,8 @@
+.main {
+    display: flex;
+    justify-content: space-between;
+    background: #3fb6fe;
+}
+.loginbtn {
+    margin-left: 10px;
+}

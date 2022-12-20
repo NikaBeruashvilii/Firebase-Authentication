@@ -1,0 +1,17 @@
+<nav>
+    <div class="main">
+        <div class="left">
+            <button routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" mat-icon-button
+                aria-label="Example icon button with a home icon">
+                <mat-icon>home</mat-icon>
+            </button>
+        </div>
+        <div class="right">
+            <button class="registerbtn" mat-stroked-button routerLink="/register"
+                routerLinkActive="active">Register</button>
+            <button class="loginbtn" mat-stroked-button routerLink="/login" 
+                routerLinkActive="active">Log In</button>
+            <!-- <button mat-stroked-button (click)="logOut()" >Log Out</button> -->
+        </div>
+    </div>
+</nav>
