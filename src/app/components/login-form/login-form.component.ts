@@ -27,7 +27,7 @@ export class LoginFormComponent implements OnInit {
     this.fireWorker.signIn(form.value.email,form.value.password).then((response:any) => {
       response.subscribe((user:any) => {console.log(user)})   
   })
-  this.router.navigate(['/register'])
+  this.router.navigate(['/'])
   }
 
   eyeIconToggle() {

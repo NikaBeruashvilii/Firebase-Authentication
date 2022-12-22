@@ -26,7 +26,7 @@ export class RegisterFormComponent implements OnInit {
   onFormSubmit(form: NgForm) {
     var tmpUser = Object.assign(new User(), form.value);
     this.fireWorker.signUp(tmpUser, form.value.password).then((response: any) => {
-      this.router.navigate(['/authorization/login']);
+      this.router.navigate(['/login']);
       console.log(response);
     })
   }
