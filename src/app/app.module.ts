@@ -19,8 +19,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
 import { ViewComponent } from './components/view/view.component';
-import { FooterComponent } from './components/footer/footer.component';
-
 
 
 
@@ -31,7 +29,6 @@ import { FooterComponent } from './components/footer/footer.component';
     RegisterFormComponent,
     HeaderComponent,
     ViewComponent,
-    FooterComponent,
 
   ],
   imports: [
