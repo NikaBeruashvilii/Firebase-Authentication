@@ -8,13 +8,17 @@
         </div>
         <div class="right">
             <button class="registerbtn" mat-stroked-button routerLink="/register"
-                routerLinkActive="active">Register</button>
+                routerLinkActive="active"
+                *ngIf="!checkUser.checkUserLoggedIn"
+                >Register</button>
             <button class="loginbtn" mat-stroked-button routerLink="/login" 
-                routerLinkActive="active">Log In</button>
-                <button class="loginbtn" mat-stroked-button  
+                routerLinkActive="active"
+                *ngIf="!checkUser.checkUserLoggedIn"
+                >Log In</button>
+            <button class="loginbtn" mat-stroked-button  
                 (click)="logOut()"
                 *ngIf="checkUser.checkUserLoggedIn"
-                >Log In</button>
+            >Log Out</button>
         </div>
     </div>
 </nav>
