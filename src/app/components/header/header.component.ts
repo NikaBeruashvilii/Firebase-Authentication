@@ -16,6 +16,7 @@ export class HeaderComponent implements OnInit {
 
   logOut() {                                             //Log out from account and navigate on register component
     this.router.navigate(['/login']);
+    this.checkUser.checkUserLoggedIn = false;
   }
 
 

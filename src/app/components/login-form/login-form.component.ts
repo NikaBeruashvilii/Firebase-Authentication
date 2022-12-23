@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FirebaseWorkerService } from '../../services/firebase-worker.service';
 import { User } from '../../models/user.model';
+import { CheckbooleansService } from '../../services/checkbooleans.service';
 
 @Component({
   selector: 'app-login-form',
@@ -18,14 +19,16 @@ export class LoginFormComponent implements OnInit {
 
 
   constructor(private router: Router,
-    private fireWorker:FirebaseWorkerService) { }
+    private fireWorker:FirebaseWorkerService,
+    public checkUser:CheckbooleansService) { }
 
   ngOnInit(): void {
   }
 
   onFormSubmit(form:NgForm) {
     this.fireWorker.signIn(form.value.email,form.value.password).then((response:any) => {
-      response.subscribe((user:any) => {console.log(user)})   
+      response.subscribe((user:any) => {console.log(user)}) 
+      this.checkUser.checkUserLoggedIn = true;
   })
   this.router.navigate(['/'])
   }
