@@ -76,4 +76,14 @@ export class FirebaseWorkerService {
         merge: true,
       });
     }
+
+    forgotPassword(passwordReset:string) {
+      return this.auth.sendPasswordResetEmail(passwordReset)
+      .then(() => {
+        window.alert("Password Reset Email Send, Check Your Inbox")
+      })
+      .catch((error) => {
+        window.alert(error)
+      })
+    }
   }

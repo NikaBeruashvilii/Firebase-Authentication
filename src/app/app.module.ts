@@ -19,6 +19,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
 import { ViewComponent } from './components/view/view.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 
 
 
@@ -29,6 +30,7 @@ import { ViewComponent } from './components/view/view.component';
     RegisterFormComponent,
     HeaderComponent,
     ViewComponent,
+    ForgotPasswordComponent,
 
   ],
   imports: [
