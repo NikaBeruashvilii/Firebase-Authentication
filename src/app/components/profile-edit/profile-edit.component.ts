@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { FirebaseWorkerService } from '../../services/firebase-worker.service';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { User } from '../../models/user.model';
-// import { User } from 'src/app/models/user.model';
 
 @Component({
   selector: 'app-profile-edit',
@@ -17,20 +16,19 @@ export class ProfileEditComponent implements OnInit {
   email!: string;
 
   inpType: string = 'password';
-  user: User = new User()
+  user: User = new User();
 
 
-  constructor(private router:Router,
-    private fireWorker:FirebaseWorkerService,
+  constructor(private router:Router, private fireWorker:FirebaseWorkerService,
     private afs:AngularFirestore) { }
 
   ngOnInit(): void {
-    this.fireWorker.user$?.subscribe((user: any) => {
+    this.fireWorker.user$.subscribe((user: any) => {
       this.uid = user.id;
       this.userName = user.userName;
       this.phoneNumber = user.phoneNumber;
       this.email = user.email;
-      console.log(user);
+      console.log(user);      
     })
   }
 

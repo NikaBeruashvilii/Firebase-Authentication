@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 import { User } from '../models/user.model';
-import { Observable } from 'rxjs';
+import { Observable, of, switchMap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +13,18 @@ export class FirebaseWorkerService {
 
 
   constructor(private firestore:AngularFirestore,
-    private auth:AngularFireAuth) { }
+    private auth:AngularFireAuth) { 
+      this.user$ = this.auth.authState
+      .pipe(
+        switchMap((user: any) => {
+          if (user) {
+            return this.firestore.doc<User>(`users/${user.uid}`).valueChanges();
+          } else {
+            return of(null)
+          }
+        })
+      )
+    }
 
     signIn(email: string, password: string) {
       return this.auth

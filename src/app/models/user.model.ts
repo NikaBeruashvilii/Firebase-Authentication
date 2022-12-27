@@ -5,5 +5,5 @@ export class User {
     public password!:string;
     public confirmPass!:string;
     public userName!:string;
-    public phoneNumber!:number;
+    public phoneNumber!:string;
 }
