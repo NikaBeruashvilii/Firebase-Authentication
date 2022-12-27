@@ -2,11 +2,15 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 import { User } from '../models/user.model';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FirebaseWorkerService {
+
+  user$!: Observable<User | null | undefined>;
+
 
   constructor(private firestore:AngularFirestore,
     private auth:AngularFireAuth) { }
@@ -67,10 +71,11 @@ export class FirebaseWorkerService {
       const userData: User = {
         id: fireUser.uid,
         email: fireUser.email,
-        userName: fireUser.displayName,
+        userName: user.userName,
         verifiedUser: true,
         password: user.password,
-        confirmPass: user.confirmPass
+        confirmPass: user.confirmPass,
+        phoneNumber: user.phoneNumber
       } as User;
       return userRef.set(userData, {
         merge: true,

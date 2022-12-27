@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/models/user.model';
+import { Router } from '@angular/router';
+import { FirebaseWorkerService } from 'src/app/services/firebase-worker.service';
 
 @Component({
   selector: 'app-profile',
@@ -6,10 +9,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  user: any;
 
-  constructor() { }
+  constructor(private router: Router, private fireWorker:FirebaseWorkerService) { }
 
   ngOnInit(): void {
+    this.fireWorker.user$.subscribe((user:any) => {
+      this.user = user;
+      console.log(user);
+    })
+  }
+
+  goToEditProfile() {
+    this.router.navigate(['/profile-edit'])
   }
 
 }
