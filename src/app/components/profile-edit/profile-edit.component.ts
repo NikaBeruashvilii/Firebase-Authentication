@@ -23,6 +23,13 @@ export class ProfileEditComponent implements OnInit {
     private afs:AngularFirestore) { }
 
   ngOnInit(): void {
+    this.fireWorker.user$.subscribe((user: any) => {
+      this.uid = user.id;
+      this.userName = user.userName;
+      this.phoneNumber = user.phoneNumber;
+      this.email = user.email;
+      console.log(user);
+    })
   }
 
   onFormSubmit() {
