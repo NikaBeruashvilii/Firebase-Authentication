@@ -14,7 +14,7 @@ export class ProfileComponent implements OnInit {
   constructor(private router: Router, private fireWorker:FirebaseWorkerService) { }
 
   ngOnInit(): void {
-    this.fireWorker.user$.subscribe((user:any) => {
+    this.fireWorker.user$?.subscribe((user:any) => {
       this.user = user;
       console.log(user);
     })
@@ -23,5 +23,4 @@ export class ProfileComponent implements OnInit {
   goToEditProfile() {
     this.router.navigate(['/profile-edit'])
   }
-
 }
