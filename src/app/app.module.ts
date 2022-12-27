@@ -20,6 +20,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
 import { ViewComponent } from './components/view/view.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { ProfileEditComponent } from './components/profile-edit/profile-edit.component';
 
 
 
@@ -31,6 +33,8 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
     HeaderComponent,
     ViewComponent,
     ForgotPasswordComponent,
+    ProfileComponent,
+    ProfileEditComponent,
 
   ],
   imports: [

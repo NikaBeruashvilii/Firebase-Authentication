@@ -19,5 +19,9 @@ export class HeaderComponent implements OnInit {
     this.checkUser.checkUserLoggedIn = false;
   }
 
+  goToProfile() {
+    this.router.navigate(['/profile'])
+  }
+
 
 }
