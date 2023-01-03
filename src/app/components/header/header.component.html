@@ -21,6 +21,7 @@
             >Log Out</button>
             <button class="loginbtn" mat-stroked-button  
                 (click)="goToProfile()"
+                *ngIf="checkUser.checkUserLoggedIn"
             >Profile</button>
         </div>
     </div>
