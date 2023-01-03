@@ -22,6 +22,7 @@ import { ViewComponent } from './components/view/view.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ProfileEditComponent } from './components/profile-edit/profile-edit.component';
+import { MastercardEditComponent } from './components/mastercard-edit/mastercard-edit.component';
 
 
 
@@ -35,6 +36,7 @@ import { ProfileEditComponent } from './components/profile-edit/profile-edit.com
     ForgotPasswordComponent,
     ProfileComponent,
     ProfileEditComponent,
+    MastercardEditComponent,
 
   ],
   imports: [

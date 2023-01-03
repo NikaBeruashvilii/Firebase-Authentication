@@ -25,4 +25,9 @@ export class ProfileComponent implements OnInit {
   goToEditProfile() {
     this.router.navigate(['/profile-edit']);
   }
+
+  editCard() {
+    this.router.navigate(['/mastercard-edit'])
+  }
+  
 }
