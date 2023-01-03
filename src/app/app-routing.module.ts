@@ -7,6 +7,7 @@ import { ViewComponent } from './components/view/view.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ProfileEditComponent } from './components/profile-edit/profile-edit.component';
+import { MastercardEditComponent } from './components/mastercard-edit/mastercard-edit.component';
 
 const routes: Routes = [
   {path: "", component: ViewComponent},
@@ -14,9 +15,8 @@ const routes: Routes = [
   {path: "register", component: RegisterFormComponent},
   {path: "forgot-password", component: ForgotPasswordComponent},
   {path: "profile", component: ProfileComponent},
-  {path: "profile-edit", component: ProfileEditComponent}
-
-
+  {path: "profile-edit", component: ProfileEditComponent},
+  {path: 'mastercard-edit', component: MastercardEditComponent}
 ];
 
 @NgModule({

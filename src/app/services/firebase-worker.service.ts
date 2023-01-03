@@ -80,13 +80,16 @@ export class FirebaseWorkerService {
         `users/${fireUser.uid}`
       );
       const userData: User = {
-        id: fireUser.uid,
-        email: fireUser.email,
-        userName: user.userName,
-        verifiedUser: true,
-        password: user.password,
-        confirmPass: user.confirmPass,
-        phoneNumber: user.phoneNumber
+        uid: fireUser.uid,
+      email: fireUser.email,
+      userName: user.userName,
+      verifiedUser: true,
+      password: user.password,
+      confirmPass: user.confirmPass,
+      phoneNumber: user.phoneNumber,
+      cardNumber: user.cardNumber,
+      cardCvv: user.cardCvv,
+      expirationDate: user.expirationDate
       } as User;
       return userRef.set(userData, {
         merge: true,
